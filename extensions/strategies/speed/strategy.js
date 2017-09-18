@@ -30,14 +30,14 @@ module.exports = function container (get, set, clear) {
             s.acted_on_trend = false
           }
           s.trend = 'up'
-          s.signal = !s.acted_on_trend ? 'buy' : null
+          s.signal = !s.acted_on_trend ? 'sell' : null
         }
         else if (s.period.speed <= s.period.baseline * s.options.trigger_factor * -1) {
           if (s.trend !== 'down') {
             s.acted_on_trend = false
           }
           s.trend = 'down'
-          s.signal = !s.acted_on_trend ? 'sell' : null
+          s.signal = !s.acted_on_trend ? 'buy' : null
         }
       }
       cb()
